@@ -1,0 +1,178 @@
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 5em auto;
+  padding: 2em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.icon-btn:hover {
+  background: rgba(0, 0, 0, 0.1); /* ほんのりグレー */
+  transform: scale(1.1);          /* 少し大きく */
+}
+
+#status {
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#timer {
+  font-size: 5em;
+  margin: 0.5em 0;
+}
+
+/* ✅ 進捗バー */
+#progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1em 0;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #000;
+  transition: width 1s linear;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+#progress {
+  display: flex;
+  justify-content: center;
+  gap: 0.4em;
+  margin-top: 1em;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.progress-dot.active {
+  background-color: #000;
+}
+
+/* モーダル */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2em;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 300px;
+  text-align: left;
+}
+
+.modal-content h2 {
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 1em;
+  font-size: 0.9em;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.4em;
+  margin-top: 0.3em;
+  font-family: inherit;
+}
+
+/* 横並びレイアウト修正版 */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;  /* ラベルとチェックボックスの間の距離を固定 */
+  margin-top: 1em;
+  justify-content: flex-start; /* 左寄せに変更 */
+}
+
+.checkbox-row label {
+  font-size: 0.9em;
+  white-space: nowrap; /* ラベルが折り返されないように */
+}
+
+.checkbox-row input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+.modal-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5em;
+}
+
+#version {
+  position: fixed;        /* 画面に固定 */
+  bottom: 10px;           /* 下から10px */
+  right: 10px;            /* 右から10px */
+  font-size: 0.7em;       /* 小さめ */
+  color: #666;            /* 薄めの色 */
+  font-family: 'Share Tech Mono', monospace;
+  user-select: none;      /* コピー不可 */
+  pointer-events: none;   /* ボタンなどの操作に影響させない */
+}
